@@ -3,12 +3,14 @@ import numpy as np
 import joblib
 import warnings
 warnings.filterwarnings('ignore')
+import os
 
 # Page setting
 st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page_icon="📈")
 
 st.title("AD CLICK PREDICTION")
-st.image('\ads_pred\Ads_pic.jpg', use_container_width=True)
+image_path = os.path.join(os.getcwd(), 'Ads_pic.jpg')
+st.image(image_path, use_column_width=True)
 st.text("Fill in the following values to predict whether the user will click on the ad")
 
 # Input features
