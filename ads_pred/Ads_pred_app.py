@@ -8,7 +8,7 @@ warnings.filterwarnings('ignore')
 st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page_icon="📈")
 
 st.title("AD CLICK PREDICTION")
-st.image('Ads_pic.jpg', use_container_width=True)
+st.image('\ads_pred\Ads_pic.jpg', use_container_width=True)
 st.text("Fill in the following values to predict whether the user will click on the ad")
 
 # Input features
