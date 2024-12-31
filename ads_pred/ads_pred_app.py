@@ -11,7 +11,7 @@ st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page
 
 st.title("AD CLICK PREDICTION")
 try:
-    img = Image.open('Ads_pic.jpg')
+    img = Image.open('ads-pic.jpg')
     img.show()
     print("Image loaded successfully.")
 except Exception as e:
