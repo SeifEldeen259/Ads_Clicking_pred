@@ -9,9 +9,9 @@ import os
 st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page_icon="📈")
 
 st.title("AD CLICK PREDICTION")
-image_path = os.path.join(os.getcwd(), 'Ads_pic.jpg')
+image_path = os.path.join(os.getcwd(), 'C:\\Users\\sif\\ads-pic.jpg')
 try:
-    st.image('ads-pic.jpg', use_container_width=True)
+    st.image('C:\\Users\\sif\\ads-pic.jpg', use_container_width=True)
 except Exception as e:
     st.error(f"Error loading image: {str(e)}")
 st.text("Fill in the following values to predict whether the user will click on the ad")
