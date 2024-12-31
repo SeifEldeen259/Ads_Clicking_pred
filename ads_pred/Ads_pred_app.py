@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import joblib
+import warnings
+warnings.filterwarnings('ignore')
 
 # Page setting
 st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page_icon="📈")
