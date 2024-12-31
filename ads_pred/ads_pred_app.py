@@ -4,16 +4,19 @@ import joblib
 import warnings
 warnings.filterwarnings('ignore')
 import os
+from PIL import Image
 
 # Page setting
 st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page_icon="📈")
 
 st.title("AD CLICK PREDICTION")
-image_path = os.path.join(os.getcwd(), 'C:\\Users\\sif\\ads-pic.jpg')
 try:
-    st.image('C:\\Users\\sif\\ads-pic.jpg', use_container_width=True)
+    img = Image.open('Ads_pic.jpg')
+    img.show()
+    print("Image loaded successfully.")
 except Exception as e:
-    st.error(f"Error loading image: {str(e)}")
+    print(f"Error loading image: {e}")
+
 st.text("Fill in the following values to predict whether the user will click on the ad")
 
 # Input features
