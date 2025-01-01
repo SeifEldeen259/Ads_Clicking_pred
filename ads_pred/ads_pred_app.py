@@ -9,7 +9,6 @@ from PIL import Image
 st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page_icon="📈")
 
 st.title("AD CLICK PREDICTION")
-st.image('advertisment.jpg', use_column_width=True)
 try:
     img = Image.open('advertisment.jpg')
     st.image(img, use_column_width=True)
