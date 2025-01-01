@@ -10,7 +10,7 @@ st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page
 
 st.title("AD CLICK PREDICTION")
 try:
-    img = Image.open('Ads_pic.jpg')
+    img = Image.open('ads_pic.jpg')
     st.image(img, use_column_width=True)
 except Exception as e:
     st.error(f"Error loading image: {e}")
