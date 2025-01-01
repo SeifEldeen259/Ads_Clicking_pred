@@ -3,7 +3,6 @@ import numpy as np
 import joblib
 import warnings
 warnings.filterwarnings('ignore')
-import os
 from PIL import Image
 
 # Page setting
@@ -11,11 +10,10 @@ st.set_page_config(page_title="Ad Click Prediction App", layout="centered", page
 
 st.title("AD CLICK PREDICTION")
 try:
-    img = Image.open('ads-pic.jpg')
-    img.show()
-    print("Image loaded successfully.")
+    img = Image.open('Ads_pic.jpg')
+    st.image(img, use_column_width=True)
 except Exception as e:
-    print(f"Error loading image: {e}")
+    st.error(f"Error loading image: {e}")
 
 st.text("Fill in the following values to predict whether the user will click on the ad")
 
@@ -26,6 +24,15 @@ area_income = st.number_input('Area Income (average income of the user’s area)
 daily_internet_usage = st.slider('Daily Internet Usage (minutes):', 0.0, 1000.0, step=0.1, value=200.0)
 gender = st.selectbox('Gender:', ['Male', 'Female'])
 topic_of_interest = st.text_input("Topic of Interest (e.g., Technology, Fitness, Travel):")
+
+# Function to encode age into an age group
+def findAgeGroup(Age):
+    if Age >= 19 and Age < 35:
+        return 1
+    elif Age >= 35 and Age < 50:
+        return 2
+    else:
+        return 3
 
 # Submit button
 btn = st.button("Predict")
@@ -39,7 +46,12 @@ if btn:
 
         # Preprocessing
         gender_binary = 1 if gender == "Male" else 0
-        input_data = np.array([[daily_time_spent_on_site, age, area_income, daily_internet_usage, gender_binary]])
+        
+        # Encode age into age group
+        age_group = findAgeGroup(age)
+
+        # Prepare input data
+        input_data = np.array([[daily_time_spent_on_site, age_group, area_income, daily_internet_usage, gender_binary]])
 
         # Prediction
         prediction = model.predict(input_data)
